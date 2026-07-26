@@ -4,8 +4,6 @@
 
 # ReceiptBI
 
-**把 CSV、Excel 和只读数据库变成可核查、可编辑的业务报表。**
-
 用自然语言调查数据，保留结论依据，再把确认过的结果整理成报表。
 
 [下载桌面版](https://github.com/MoonMao42/ReceiptBI/releases/latest) · [用示例数据试一遍](#用示例数据试一遍) · [English](README.en.md)
