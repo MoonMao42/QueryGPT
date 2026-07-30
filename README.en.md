@@ -4,9 +4,7 @@
 
 # ReceiptBI
 
-**Turn CSV, Excel, and read-only databases into reports you can verify and edit.**
-
-Investigate data in plain language, keep the evidence, and organize confirmed findings into reports.
+**Turn CSV, Excel, and read-only databases into verified, editable business reports.**
 
 [Download the desktop app](https://github.com/MoonMao42/ReceiptBI/releases/latest) · [Try the sample](#try-the-sample) · [中文](README.md)
 
@@ -18,9 +16,7 @@ Investigate data in plain language, keep the evidence, and organize confirmed fi
 
 ![Reviewing report pages and moving into the editing layout](docs/images/demo/receiptbi-report-demo.gif)
 
-<p align="center"><sub>Recorded in the real app with the 12-row synthetic order sample included in this repository.</sub></p>
-
-Many data tools stop after answering one question. ReceiptBI keeps the question, source data, business definitions, calculations, and findings in the same investigation. You can inspect the evidence and keep working with the result in an editable report.
+<p align="center"><sub>Interact with databases, Excel files and more via natural language (read-only). Generate charts and summaries.</sub></p>
 
 ## Try the sample
 
@@ -31,25 +27,15 @@ Many data tools stop after answering one question. ReceiptBI keeps the question,
 
 > Analyze sales, gross profit, and refunds for the latest month. Compare regions and channels.
 
-The sample contains 12 synthetic rows and no names, addresses, accounts, or other personal information. It is small enough to show the full path from an investigation to a paginated report in a few minutes.
-
 ## Download
 
-The current desktop version is [ReceiptBI 1.0.0](https://github.com/MoonMao42/ReceiptBI/releases/tag/v1.0.0).
-
-| System | Installer |
-|---|---|
-| macOS, Apple silicon | [Download DMG](https://github.com/MoonMao42/ReceiptBI/releases/download/v1.0.0/ReceiptBI-1.0.0-mac-arm64.dmg) |
-| macOS, Intel | [Download DMG](https://github.com/MoonMao42/ReceiptBI/releases/download/v1.0.0/ReceiptBI-1.0.0-mac-x64.dmg) |
-| Windows x64 | [Download installer](https://github.com/MoonMao42/ReceiptBI/releases/download/v1.0.0/ReceiptBI-1.0.0-win-x64.exe) |
-
-Installer checksums are available in [SHA256SUMS](https://github.com/MoonMao42/ReceiptBI/releases/download/v1.0.0/SHA256SUMS).
+The current version is [ReceiptBI 1.0.0](https://github.com/MoonMao42/ReceiptBI/releases/tag/v1.0.0).
 
 <details>
 <summary><strong>First launch on macOS</strong></summary>
 
 1. Open the DMG and move ReceiptBI to Applications.
-2. The current 1.0.0 build is unsigned. If macOS blocks the first launch, run:
+2. The current 1.0.0 build is unsigned. If macOS blocks the first launch, run in Terminal:
 
 ```bash
 xattr -cr /Applications/ReceiptBI.app
@@ -57,35 +43,25 @@ xattr -cr /Applications/ReceiptBI.app
 
 </details>
 
-## More than a one-off answer
+## Features
 
-### Keep the question and evidence together
-
-Each investigation keeps the original question, relevant data, findings, charts, and follow-up work in one place. When a business definition is unclear, you can confirm it before the analysis continues.
+### Full analysis process with highlights and charts
 
 ![An investigation with key metrics, findings, and charts](docs/images/en/workspace-analysis.png)
 
-### Keep business definitions with the right data
-
-ReceiptBI stores source purpose, field meanings, metrics, and relationships with the data they describe. A table-level definition only applies inside that table. Cross-table analysis uses confirmed relationships to combine those scopes.
+### AI-generated semantic layer per data source
 
 ![Business definitions organized by data source and table](docs/images/en/semantic-governance.png)
 
-### Continue from findings to an editable report
-
-Choose an investigation, review the suggested content and order, then create a report draft. Reports remain editable and paginated, and existing manual edits are not silently overwritten.
+### Convert to editable reports
 
 ![Reviewing an investigation before organizing it into a report](docs/images/en/report-organizing.png)
 
-### See the real page breaks before export
-
-Preview shows the actual pagination before printing or export, so metrics, charts, and source references remain readable.
+### Preview pagination before export
 
 ![A paginated report print preview](docs/images/en/report-print-preview.png)
 
 <div align="center">
-
-**If ReceiptBI has saved you from rebuilding one report by hand, a Star helps.**
 
 [⭐ Star ReceiptBI](https://github.com/MoonMao42/ReceiptBI)
 
@@ -104,65 +80,8 @@ flowchart LR
     validate --> report["Editable report"]
 ```
 
-Confirmed preparation steps and business definitions can be reused. When the data changes but its structure does not, the same definitions can support another investigation and a refreshed report.
+Confirmed data preparation steps and business definitions are saved. When data updates but the schema stays the same, you can reuse existing definitions to re-run analysis and refresh reports.
 
-## Supported today
-
-| Area | Support |
-|---|---|
-| Files | CSV, XLS, XLSX, Parquet, JSON |
-| Databases | SQLite, MySQL, PostgreSQL with read-only connections |
-| Model providers | OpenAI-compatible APIs, Anthropic, DeepSeek, Ollama, custom gateways |
-| Report content | Metrics, text, tables, charts, sources, paginated preview |
-
-## Run from source
-
-macOS and Linux require Python 3.11+ and Node.js LTS:
-
-```bash
-git clone https://github.com/MoonMao42/ReceiptBI.git
-cd ReceiptBI
-./start.sh
-```
-
-Docker is also supported:
-
-```bash
-docker compose up --build
-```
-
-Open `http://localhost:3000`, choose a model provider, and add your data.
-
-<details>
-<summary><strong>Development notes</strong></summary>
-
-### Common commands
-
-```bash
-./start.sh              # Start the frontend and backend
-./start.sh setup        # Install dependencies
-./start.sh stop         # Stop the services
-./start.sh test         # Run tests
-```
-
-### Stack
-
-| Part | Technology |
-|---|---|
-| Frontend | Next.js 15, React 19, TypeScript |
-| Backend | FastAPI, Python 3.11+, PydanticAI |
-| Desktop | Electron, Rust |
-| Data processing | DuckDB, native database adapters |
-
-</details>
-
-## Join the project
-
-- [Open an issue](https://github.com/MoonMao42/ReceiptBI/issues/new/choose)
-- [Join a discussion](https://github.com/MoonMao42/ReceiptBI/discussions)
-- [Contributing guide](CONTRIBUTING.md)
-- [Security policy](SECURITY.md)
-- [Code of conduct](CODE_OF_CONDUCT.md)
 
 ## Previous versions
 
